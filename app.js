@@ -123,7 +123,7 @@ function parseQuestionsTSV(text) {
     }
 
     return {
-      id: cleanCell(cols[idx.id]),
+      id: cleanCell(cols[idx.id]) || `row-${lineNo + 2}`,
       category: cleanCell(cols[idx.category]),
       question: cleanCell(cols[idx.question]),
       choices: [
@@ -316,7 +316,9 @@ function render() {
   const q = deck[i];
 
   // Header
-  appTitleEl.textContent = currentCat ? `SHIOLAB QUIZ / ${currentCat.title}` : "SHIOLAB QUIZ";
+  if (appTitleEl) {
+    appTitleEl.textContent = currentCat ? `SHIOLAB QUIZ / ${currentCat.title}` : "SHIOLAB QUIZ";
+  }
 
   // Main labels
   categoryTitleEl.textContent = currentCat?.title ?? "";
@@ -437,7 +439,7 @@ function backToTop(confirmIfDirty = true) {
   summaryEl.innerHTML = "";
   reviewEl.innerHTML = "";
 
-  appTitleEl.textContent = "SHIOLAB QUIZ";
+  if (appTitleEl) appTitleEl.textContent = "SHIOLAB QUIZ";
   updateStatus();
   showScreen("top");
 }
@@ -508,9 +510,11 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-nextWrongBtn.addEventListener("click", () => {
-  jumpNext((idx) => answers[idx] && !answers[idx].isCorrect);
-});
+if (nextWrongBtn) {
+  nextWrongBtn.addEventListener("click", () => {
+    jumpNext((idx) => answers[idx] && !answers[idx].isCorrect);
+  });
+}
 
 restartBtn.addEventListener("click", () => {
   if (!currentCat) return backToTop(false);
@@ -521,4 +525,4 @@ restartBtn.addEventListener("click", () => {
 showScreen("top");
 renderTop();
 updateStatus();
-appTitleEl.textContent = "SHIOLAB QUIZ";
+if (appTitleEl) appTitleEl.textContent = "SHIOLAB QUIZ";
