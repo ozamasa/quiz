@@ -18,7 +18,6 @@ function publishedTsvUrl(gid) {
 
 // DOM
 const appHeaderEl = $("appHeader");
-const appTitleEl = $("appTitle");
 
 const topEl = $("top");
 const quizEl = $("quiz");
@@ -84,9 +83,11 @@ function normalizeAnswer(v) {
   if (v == null) return NaN;
   let s = String(v);
 
+  // 全角→半角
   s = s.replace(/[０-９]/g, (ch) =>
     String.fromCharCode(ch.charCodeAt(0) - 0xFEE0)
   );
+
   s = cleanCell(s);
   s = s.replace(/^"(.*)"$/, "$1").trim();
 
@@ -263,9 +264,7 @@ function updateStatus() {
 
   statusHintEl.textContent = `正解:${correct} | 未回答:${unanswered} | 不正解:${wrong}`;
 
-  if (nextWrongBtn) {
-    nextWrongBtn.disabled = (wrong === 0);
-  }
+  if (nextWrongBtn) nextWrongBtn.disabled = (wrong === 0);
 }
 
 function setFeedbackForCurrent() {
@@ -274,6 +273,7 @@ function setFeedbackForCurrent() {
 
   if (!a) {
     feedbackEl.innerHTML = "";
+    feedbackEl.classList.remove("is-open");
     nextBtn.disabled = true;
     nextBtn.textContent = "次へ";
     return;
@@ -289,6 +289,8 @@ function setFeedbackForCurrent() {
     <div class="hint">解説：${exp}</div>
   `;
 
+  feedbackEl.classList.add("is-open");
+
   nextBtn.disabled = false;
   nextBtn.textContent = (i === deck.length - 1) ? "結果へ" : "次へ";
 }
@@ -297,12 +299,13 @@ function formatQuestion(text) {
   let s = String(text || "");
 
   // 話者ラベル（A: / B: / Woman 1: / Wife: 等）を見やすく改行
-  // 例: "Woman 1: ... Woman 2: ..." → "\nWoman 1: ...\nWoman 2: ..."
-  s = s.replace(/(^| )((?:[A-Z][a-z]+(?:\s\d+)?)|(?:[A-D])):\s*/g, (m, p1, label) => {
-    // 文頭ならそのまま、途中なら改行
-    const head = (p1 === "" ? "" : "\n");
-    return `${head}${label}: `;
-  });
+  s = s.replace(
+    /(^| )((?:[A-Z][a-z]+(?:\s\d+)?)|(?:[A-D])):\s*/g,
+    (m, p1, label) => {
+      const head = (p1 === "" ? "" : "\n");
+      return `${head}${label}: `;
+    }
+  );
 
   // ( ) を少し広げる
   s = s.replace(/\(\s*\)/g, "(　　　)");
@@ -315,19 +318,11 @@ function render() {
 
   const q = deck[i];
 
-  // Header
-  if (appTitleEl) {
-    appTitleEl.textContent = currentCat ? `SHIOLAB QUIZ / ${currentCat.title}` : "SHIOLAB QUIZ";
-  }
-
-  // Main labels
   categoryTitleEl.textContent = currentCat?.title ?? "";
-  qNoEl.textContent = `Q ${i + 1}`;
+  qNoEl.textContent = `Q${i + 1}`;
 
-  // Question
   qTextEl.textContent = formatQuestion(q.question);
 
-  // Choices
   ensureShuffledChoices(q);
 
   const a = answers[i];
@@ -351,9 +346,7 @@ function render() {
         const isCorrect = (c.idx === q.answer);
         answers[i] = { choiceIndex: c.idx, isCorrect };
 
-        if (currentCat?.key) {
-          updateStats(currentCat.key, q.id, isCorrect);
-        }
+        if (currentCat?.key) updateStats(currentCat.key, q.id, isCorrect);
 
         render();
       });
@@ -362,11 +355,13 @@ function render() {
     choicesEl.appendChild(btn);
   });
 
+  // 回答後はchoicesを“下”に見せる
+  choicesEl.classList.toggle("is-dim", answered);
+
   updateNavState();
   updateStatus();
   setFeedbackForCurrent();
 
-  // Prev button state
   prevBtn.disabled = (i === 0);
 }
 
@@ -394,7 +389,7 @@ function finishToResult() {
     <p>未回答：${unanswered}　不正解：${wrong}</p>
   `;
 
-  // 結果は番号順（要望どおり）
+  // 結果は番号順
   const items = deck.map((q, idx) => ({ q, idx, a: answers[idx] }));
 
   reviewEl.innerHTML = items.map(({ q, idx, a }) => {
@@ -436,10 +431,10 @@ function backToTop(confirmIfDirty = true) {
   qTextEl.textContent = "";
   choicesEl.innerHTML = "";
   feedbackEl.innerHTML = "";
+  feedbackEl.classList.remove("is-open");
   summaryEl.innerHTML = "";
   reviewEl.innerHTML = "";
 
-  if (appTitleEl) appTitleEl.textContent = "SHIOLAB QUIZ";
   updateStatus();
   showScreen("top");
 }
@@ -483,7 +478,7 @@ function renderTop() {
     const btn = document.createElement("button");
     btn.className = "categoryBtn";
     btn.type = "button";
-    btn.textContent = cat.title; // ←「公開」バッジは出さない
+    btn.textContent = cat.title;
     btn.addEventListener("click", () => startCategory(cat));
     categoryListEl.appendChild(btn);
   });
@@ -525,4 +520,3 @@ restartBtn.addEventListener("click", () => {
 showScreen("top");
 renderTop();
 updateStatus();
-if (appTitleEl) appTitleEl.textContent = "SHIOLAB QUIZ";

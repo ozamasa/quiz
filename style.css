@@ -1,454 +1,384 @@
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: #f6f7fb;
-}
-
-.wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logoQ {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  background: #2563eb;   /* faviconと同じ色 */
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.siteTitle {
-  font-size: 18px;
-  font-weight: 700;
-  color: #111;
-}
-
-.panel {
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
-}
-
-.note {
-  color: #666;
-  margin-top: 8px;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.helpList {
-  margin: 10px 0 0;
-  color: #555;
-  font-size: 13px;
-  padding-left: 18px;
-}
-
-.helpList li {
-  margin: 4px 0;
-}
-
-.sectionTitle {
-  margin: 18px 0 8px;
-  font-size: 14px;
-  color: #555;
-  font-weight: 800;
-}
-
-/* ===== TOP: SHIOLAB QUIZ ===== */
-.topPanel {
-  padding: 22px;
-}
-
-.brand {
-  text-align: center;
-  padding: 10px 8px 6px;
-}
-
-.brandName {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  color: #111;
-}
-
-.brandTag {
-  margin-top: 6px;
-  font-size: 13px;
-  color: #666;
-}
-
-.topIntro {
-  margin-top: 10px;
-}
-
-.topFooter {
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
-  text-align: center;
-  color: #888;
-  font-size: 12px;
-}
-
-.siteFooter{
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
-  text-align: center;
-  font-size: 12px;
-  color: #888;
-}
-
-.siteFooter a{
-  color: #666;
-  text-decoration: none;
-}
-
-.siteFooter a:hover{
-  text-decoration: underline;
-}
-
-.siteFooter .sep{
-  margin: 0 4px;
-  color: #bbb;
-}
-
-/* ===== TOP: category buttons ===== */
-.categoryList {
-  display: grid;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.categoryBtn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 16px;
-  border-radius: 16px;
-  border: 1px solid #ddd;
-  background: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 800;
-}
-
-.categoryBtn:hover {
-  background: #fafafa;
-}
-
-.topMessage {
-  margin-top: 12px;
-  color: #333;
-  min-height: 20px;
-}
-
-/* ===== QUIZ layout ===== */
-.quiz {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 12px;
-}
-
-.side {
-  background: #fff;
-  padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
-  height: fit-content;
-  position: sticky;
-  top: 12px;
-  display: grid;
-  gap: 10px;
-}
-
-.status {
-  margin: 10px 0;
-  text-align: center;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
-}
-
-.jumpBtns {
-  margin: 6px 0 10px;
-}
-
-.jumpBtns button {
-  width: 100%;
-  min-height: 44px;
-  font-size: 14px;
-  border-radius: 12px;
-}
-
-.topBackBtn {
-  width: 100%;
-  min-height: 44px;
-  font-size: 14px;
-  border-radius: 12px;
-}
-
-.nav {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-}
-
-.navbtn {
-  padding: 8px 0;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  background: #fff;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.navbtn.current {
-  outline: 2px solid #333;
-}
-
-.navbtn.answered {
-  background: #eef7ff;
-}
-
-.navbtn.wrong {
-  border-color: #dc2626;
-}
-
-/* ===== Main ===== */
-.main {
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
-}
-
-.subhead {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.metaLine {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.metaLine {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.categoryTitle {
-  font-size: 13px;
-  font-weight: 600;
-  color: #666;
-}
-
-/* Q番号：さらに軽く */
-.qno {
-  font-size: 13px;
-  color: #aaa;
-}
-
-.questionHeader {
-  margin-bottom: 6px;
-}
-
-.qtext {
-  margin-top: 4px;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.6;
-}
-
-.choices {
-  display: grid;
-  gap: 10px;
-  margin: 16px 0 10px;
-}
-
-.choice {
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.choice.selected {
-  border-color: #111;
-  background: #fafafa;
-}
-
-.choice.correct {
-  border-color: #16a34a;
-  background: #ecfdf5;
-}
-
-.choice.wrong {
-  border-color: #dc2626;
-  background: #fef2f2;
-}
-
-.choice:disabled {
-  cursor: default;
-  opacity: 0.98;
-}
-
-/* ===== Feedback ===== */
-.feedback {
-  min-height: 24px;
-  padding: 12px 12px;
-  border-radius: 12px;
-  background: #f8fafc;
-  border: 1px solid #eee;
-  color: #111;
-}
-
-#feedback .fbResult {
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-#feedback .fbAnswer {
-  margin-bottom: 12px;
-  color: #333;
-}
-
-#feedback .hint {
-  color: #444;
-  margin-top: 6px;
-  line-height: 1.6;
-}
-
-/* ===== Bottom bar ===== */
-.bottomBar {
-  position: sticky;
-  bottom: 0;
-  background: #fff;
-  padding: 12px;
-  border-top: 1px solid #eee;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.navBtn {
-  flex: 1;
-  min-height: 52px;
-  font-size: 16px;
-  border-radius: 12px;
-}
-
-.navBtn.primary {
-  font-weight: 900;
-}
-
-.navBtn:disabled {
-  opacity: .45;
-}
-
-/* ===== Buttons ===== */
-button {
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-}
-
-.secondary {
-  background: #f3f4f6;
-}
-
-button.small {
-  min-height: 36px;
-  padding: 6px 10px;
-  font-size: 13px;
-  border-radius: 10px;
-}
-
-/* ===== Result ===== */
-.resultHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-#result button {
-  min-height: 48px;
-  padding: 12px 14px;
-  font-size: 16px;
-  border-radius: 12px;
-}
-
-#result .resultActions {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
-}
-
-#result .resultActions button {
-  flex: 1;
-}
-
-.reviewItem {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 12px;
-  margin-top: 10px;
-}
-
-.rHead {
-  font-weight: 900;
-  margin-bottom: 6px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.rQ {
-  margin: 6px 0;
-}
-
-.exp {
-  color: #444;
-  margin-top: 6px;
-}
-
-/* Safari対策 */
-[hidden] { display: none !important; }
-
 :root{
   --primary: #2563eb;      /* SHIOLAB QUIZ Blue */
   --primary-text: #ffffff;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background:#f6f7fb;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:16px;
+}
+
+/* ===== Header ===== */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logoQ{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:26px;
+  height:26px;
+  border-radius:6px;
+  background: var(--primary);
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  line-height:1;
+}
+
+.siteTitle{
+  font-size:18px;
+  font-weight:800;
+  color:#111;
+}
+
+/* ===== Panels ===== */
+.panel{
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+
+/* ===== TOP ===== */
+.topPanel{
+  padding:22px;
+}
+
+.brand{
+  text-align:center;
+  padding:10px 8px 6px;
+}
+
+.brandName{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:.5px;
+  color:#111;
+}
+
+.brandTag{
+  margin-top:6px;
+  font-size:13px;
+  color:#666;
+}
+
+.topIntro{
+  margin-top:10px;
+}
+
+.note{
+  color:#666;
+  margin-top:8px;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.helpList{
+  margin:10px 0 0;
+  color:#555;
+  font-size:13px;
+  padding-left:18px;
+}
+
+.helpList li{ margin:4px 0; }
+
+.sectionTitle{
+  margin:18px 0 8px;
+  font-size:14px;
+  color:#555;
+  font-weight:900;
+}
+
+/* category buttons */
+.categoryList{
+  display:grid;
+  gap:12px;
+  margin-top:10px;
+}
+
+.categoryBtn{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 16px;
+  border-radius:16px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:900;
+}
+
+.categoryBtn:hover{ background:#fafafa; }
+
+.topMessage{
+  margin-top:12px;
+  color:#333;
+  min-height:20px;
+}
+
+/* footer */
+.siteFooter{
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid #eee;
+  text-align:center;
+  font-size:12px;
+  color:#888;
+}
+
+.siteFooter a{
+  color:#666;
+  text-decoration:none;
+}
+
+.siteFooter a:hover{ text-decoration:underline; }
+
+.siteFooter .sep{
+  margin:0 4px;
+  color:#bbb;
+}
+
+/* ===== QUIZ layout ===== */
+.quiz{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:12px;
+}
+
+.side{
+  background:#fff;
+  padding:12px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  height:fit-content;
+  position:sticky;
+  top:12px;
+  display:grid;
+  gap:10px;
+}
+
+.status{
+  margin:10px 0;
+  text-align:center;
+  font-size:13px;
+  color:#555;
+  line-height:1.6;
+}
+
+.jumpBtns{
+  margin:6px 0 10px;
+}
+
+.jumpBtns button{
+  width:100%;
+  min-height:44px;
+  font-size:14px;
+  border-radius:12px;
+}
+
+.topBackBtn{
+  width:100%;
+  min-height:44px;
+  font-size:14px;
+  border-radius:12px;
+}
+
+.nav{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:6px;
+}
+
+.navbtn{
+  padding:8px 0;
+  border-radius:10px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.navbtn.current{ outline:2px solid #333; }
+.navbtn.answered{ background:#eef7ff; }
+.navbtn.wrong{ border-color:#dc2626; }
+
+/* ===== Main ===== */
+.main{
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  padding-bottom:84px; /* bottomBar分（ボタンが隠れない） */
+}
+
+.metaLine{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.categoryTitle{
+  font-size:13px;
+  font-weight:700;
+  color:#666;
+}
+
+.qno{
+  font-size:13px;
+  color:#aaa;
+}
+
+.qtext{
+  margin-top:4px;
+  font-size:22px;
+  font-weight:800;
+  line-height:1.6;
+  white-space: pre-line; /* JSの改行をそのまま表示 */
+}
+
+.choices{
+  display:grid;
+  gap:10px;
+  margin:16px 0 10px;
+}
+
+.choice{
+  font-size:16px;
+  line-height:1.4;
+}
+
+.choice.selected{
+  border-color:#111;
+  background:#fafafa;
+}
+
+.choice.correct{
+  border-color:#16a34a;
+  background:#ecfdf5;
+}
+
+.choice.wrong{
+  border-color:#dc2626;
+  background:#fef2f2;
+}
+
+.choice:disabled{
+  cursor:default;
+  opacity:.98;
+}
+
+.choices.is-dim{
+  opacity:.55;
+  filter: grayscale(.10);
+}
+
+/* ===== Bottom bar ===== */
+.bottomBar{
+  position: sticky;
+  bottom: 0;
+  background:#fff;
+  padding:12px;
+  border-top:1px solid #eee;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  z-index: 30; /* feedbackより上 */
+}
+
+.navBtn{
+  flex:1;
+  min-height:52px;
+  font-size:16px;
+  border-radius:12px;
+}
+
+.navBtn.primary{ font-weight:900; }
+
+.navBtn:disabled{ opacity:.45; }
+
+/* ===== Feedback bottom sheet (A) =====
+   画面下から出て、choicesより上 / bottomBarより下 */
+.feedback{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  max-width: 1100px;
+  margin: 0 auto;
+
+  background: #fff;
+  border: 1px solid #eee;
+  border-bottom: none;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -12px 30px rgba(0,0,0,.12);
+
+  padding: 14px 16px;
+  padding-bottom: 80px; /* bottomBarで隠れないように逃がす（A方式の必須） */
+
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform .22s ease, opacity .22s ease;
+
+  z-index: 20;
+}
+
+.feedback.is-open{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.feedback .fbResult{
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.feedback .fbAnswer{
+  color:#333;
+  margin-bottom: 10px;
+}
+
+.feedback .hint{
+  color:#444;
+  line-height: 1.6;
+}
+
+/* ===== Buttons ===== */
+button{
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  background:#fff;
+  cursor:pointer;
+}
+
+.secondary{ background:#f3f4f6; }
+
+button.small{
+  min-height:36px;
+  padding:6px 10px;
+  font-size:13px;
+  border-radius:10px;
 }
 
 /* Primary buttons */
@@ -464,23 +394,67 @@ button.small {
   filter: brightness(0.95);
 }
 
-.adBox:empty{
-  display:none;
+/* ===== Result ===== */
+.resultHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
 }
 
-.adBox{
-  margin: 12px 0;
+#result button{
+  min-height:48px;
+  padding:12px 14px;
+  font-size:16px;
+  border-radius:12px;
 }
 
-@media (max-width: 768px) {
-  .quiz {
-    grid-template-columns: 1fr;
+#result .resultActions{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+#result .resultActions button{ flex:1; }
+
+.reviewItem{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:12px;
+  margin-top:10px;
+}
+
+.rHead{
+  font-weight:900;
+  margin-bottom:6px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.rQ{ margin:6px 0; }
+
+.exp{
+  color:#444;
+  margin-top:6px;
+}
+
+/* ad */
+.adBox{ margin:12px 0; }
+.adBox:empty{ display:none; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+  .quiz{ grid-template-columns: 1fr; }
+  .side{ position: static; order: -1; }
+  .feedback{
+    left: 12px;
+    right: 12px;
+    max-width: none;
+    bottom: 0; /* A方式なので 0 固定 */
   }
 }
 
-@media (max-width: 768px) {
-  .side {
-    position: static;
-    order: -1;
-  }
-}
+/* Safari */
+[hidden]{ display:none !important; }
