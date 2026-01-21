@@ -252,28 +252,41 @@ body {
   margin-bottom: 8px;
 }
 
+.metaLine {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metaLine {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .categoryTitle {
-  font-size: 16px;
-  font-weight: 800;
-  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Q番号：さらに軽く */
+.qno {
+  font-size: 13px;
+  color: #aaa;
 }
 
 .questionHeader {
   margin-bottom: 6px;
 }
 
-.qno {
-  font-size: 14px;
-  color: #666;
-  font-weight: 800;
-}
-
 .qtext {
+  margin-top: 4px;
   font-size: 22px;
-  font-weight: 800;
-  line-height: 1.55;
-  margin-bottom: 18px;
-  white-space: pre-line;
+  font-weight: 700;
+  line-height: 1.6;
 }
 
 .choices {
