@@ -458,3 +458,16 @@ button.small {
 .adBox{
   margin: 12px 0;
 }
+
+@media (max-width: 768px) {
+  .quiz {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .side {
+    position: static;
+    order: -1;
+  }
+}
