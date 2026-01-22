@@ -454,7 +454,43 @@ button.small{
     max-width: none;
     bottom: 0; /* A方式なので 0 固定 */
   }
+
+  :root{
+    --side-gap: 12px;
+    --bar-h: 86px;        /* bottomBar のだいたいの高さ（余裕込み） */
+    --bar-gap: 10px;      /* 画面下から少し浮かせる */
+  }
+
+  .bottomBar{
+    position: fixed;
+    left: var(--side-gap);
+    right: var(--side-gap);
+    bottom: calc(var(--bar-gap) + env(safe-area-inset-bottom));
+    z-index: 30;
+
+    border-radius: 14px;
+    box-shadow: 0 10px 26px rgba(0,0,0,.14);
+  }
+
+  .main{
+    padding-bottom: calc(var(--bar-h) + var(--bar-gap) + env(safe-area-inset-bottom) + 30px);
+  }
+
+  .feedback{
+    left: var(--side-gap);
+    right: var(--side-gap);
+
+    /* bottomBarの上に積む */
+    bottom: calc(var(--bar-h) + var(--bar-gap) + env(safe-area-inset-bottom));
+    max-width: none;
+
+    z-index: 20; /* bottomBar(30)より下に */
+  }
+
+  .feedback.is-open ~ .bottomBar{
+  }
 }
 
 /* Safari */
 [hidden]{ display:none !important; }
+
