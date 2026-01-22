@@ -9,6 +9,7 @@ const MAX_QUESTIONS = 25;
 const CATEGORIES = [
   { key: "rails", title: "Rails", gid: "1983224616", enabled: false },
   { key: "eiken3", title: "英検3級", gid: "174274981", enabled: true },
+  { key: "eiken2-", title: "英検準2級", gid: "1090561184", enabled: true },
 ];
 // ===================
 
