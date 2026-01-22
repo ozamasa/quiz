@@ -491,6 +491,78 @@ button.small{
   }
 }
 
+
+.textLinks{
+  margin: 10px 0 16px;
+  padding-left: 18px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.textLinks li{
+  margin: 4px 0;
+}
+
+.textLinks a{
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.textLinks a:hover{
+  filter: brightness(0.9);
+}
+
+/* 見出し間のリズム調整（トップだけ） */
+.topPanel h2{
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+/* 「カテゴリ」見出しは、リンク群の後に来てもダレないように */
+.topPanel .sectionTitle{
+  margin-top: 18px;
+}
+
+/* ===== カテゴリボタンを“主役UI”に ===== */
+.categoryBtn{
+  transition: transform .06s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.categoryBtn:hover{
+  background: #fafafa;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+.categoryBtn:active{
+  transform: translateY(1px);
+}
+
+/* ボタン内に補足テキスト（小さい説明）を置けるように */
+.categoryBtn .sub{
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #777;
+}
+
+/* ===== “準備中”ボタン表現（将来用・今は使わなくてもOK） ===== */
+.categoryBtn.is-disabled{
+  opacity: .55;
+  cursor: not-allowed;
+  background: #f3f4f6;
+}
+
+.categoryBtn.is-disabled:hover{
+  box-shadow: none;
+}
+
+.categoryBtn.is-disabled:active{
+  transform: none;
+}
+
 /* Safari */
 [hidden]{ display:none !important; }
 
