@@ -3,20 +3,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>英検 練習問題｜SHIOLAB QUIZ</title>
-  <meta name="description" content="英検の練習問題を無料で解けるクイズサイト。空所補充・会話問題で毎日トレーニング。" />
+  <title>英検4級の練習問題（無料）｜語彙・文法・会話｜SHIOLAB QUIZ</title>
 
-  <meta property="og:title" content="英検 練習問題｜SHIOLAB QUIZ" />
-  <meta property="og:description" content="英検の練習問題を無料で解けるクイズサイト。" />
-  <meta property="og:url" content="https://quiz.shiolab.co.jp/" />
-  <meta property="og:type" content="website" />
-
-  <meta name="robots" content="index,follow" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" href="./favicon.png" type="image/png">
-  <link rel="stylesheet" href="./style.css?v=20260121" />
+  <meta name="description" content="英検4級の語彙・文法・会話表現を穴埋め形式で練習できる無料クイズ。1回最大25問、解説つき。苦手問題が出やすい学習機能あり（端末内保存）。" />
   <link rel="canonical" href="https://quiz.shiolab.co.jp/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="英検4級の練習問題（無料）｜SHIOLAB QUIZ" />
+  <meta property="og:description" content="英検4級の語彙・文法・会話表現を穴埋め形式で練習。1回最大25問、解説つき。苦手問題が出やすい学習機能あり。" />
+  <meta property="og:url" content="https://quiz.shiolab.co.jp/" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"SHIOLAB QUIZ",
+    "url":"https://quiz.shiolab.co.jp/",
+    "description":"英検4級の練習問題を無料で解けるクイズサイト（穴埋め／解説つき／1回最大25問）。"
+  }
+  </script>
+
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <link rel="stylesheet" href="./style.css?v=20260123" />
+
+  <style>
+    /* トップ専用の最小スタイル（style.cssに移してOK） */
+    .heroTitle{
+      margin: 18px 0 10px;
+      font-size: 28px;
+      font-weight: 900;
+      color:#111;
+      letter-spacing:.2px;
+    }
+    .heroLead{
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.9;
+      color:#333;
+    }
+    .ctaBox{
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+    .ctaPrimary{
+      display:block;
+      width:100%;
+      text-align:center;
+      padding: 16px 14px;
+      border-radius: 16px;
+      background: var(--primary, #2563eb);
+      color:#fff;
+      font-weight: 900;
+      font-size: 18px;
+      text-decoration:none;
+      border: 1px solid var(--primary, #2563eb);
+    }
+    .ctaPrimary:active{ transform: translateY(1px); }
+    .ctaSub{
+      margin-top: 10px;
+      font-size: 13px;
+      color:#555;
+      line-height: 1.7;
+    }
+    .miniLinks{
+      margin-top: 10px;
+      font-size: 13px;
+      color:#666;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .miniLinks a{ color:#1d4ed8; text-decoration:none; }
+    .miniLinks a:hover{ text-decoration:underline; }
+
+    .howto{
+      margin-top: 14px;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.8;
+      color:#555;
+    }
+
+    /* カテゴリ一覧は“保険”として残す（スクロールしないと見えないくらい下でOK） */
+    .categoryArea{
+      margin-top: 18px;
+      border-top: 1px solid #eee;
+      padding-top: 14px;
+    }
+    .categoryArea h2{
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 900;
+      color:#555;
+    }
+  </style>
 </head>
+
 <body>
   <div class="wrap">
     <header class="header" id="appHeader" hidden>
@@ -33,40 +119,50 @@
         <div class="brandTag">毎日少しずつ、解いて覚える。</div>
       </div>
 
-      <section class="seoBlock">
-        <h1>英検4級・3級の練習問題（無料）</h1>
-        <p>
-          SHIOLAB QUIZ は、英検の語彙・文法・会話表現を穴埋め形式で練習できる無料クイズサイトです。
-          毎日少しずつ解いて、よく出る前置詞・動詞・疑問文に慣れましょう。
-        </p>
-        <p>
-          中学生や英検を初めて受ける方、基礎から復習したい方におすすめです。
-        </p>
-      </section>
+      <h1 class="heroTitle">英検4級の練習問題（無料）</h1>
+      <p class="heroLead">
+        英検4級の語彙・文法・会話表現を、穴埋め形式でテンポよく練習できます。
+        1回最大25問。回答すると、正解と解説がすぐ表示されます。
+      </p>
 
-      <h2>英検レベル別 練習問題</h2>
-      <ul class="textLinks">
-        <li><a href="/eiken4/">英検4級の練習問題（無料）</a>｜中学初級レベル</li>
-        <li><a href="/eiken3/">英検3級の練習問題（無料）</a>｜中学卒業レベル</li>
-      </ul>
+      <!-- 迷わない核：ここだけ押せば開始 -->
+      <div class="ctaBox" aria-label="開始">
+        <a class="ctaPrimary" href="#" id="startEiken4">英検4級で今すぐ開始</a>
+        <div class="ctaSub">目安：1回5〜10分／スマホ対応／解説つき／苦手問題が出やすい（端末内保存）</div>
 
-      <div class="topIntro">
-        <p class="note">
-          カテゴリを選ぶと問題を読み込みます（最大25問）。
-          回答すると、答えと解説が表示されます。続いて、次の問題へ進めます。
-        </p>
-
-        <ul class="helpList">
-          <li>選択肢を押すと、その問題は確定します（選び直し不可）。</li>
-          <li>「次へ」は回答後に進めます。</li>
-          <li>苦手な問題ほど出やすくなります（この端末内で学習します）。</li>
-        </ul>
+        <!-- 他カテゴリは“補助”として小さく -->
+        <div class="miniLinks" aria-label="他の級">
+          <span>他の級：</span>
+          <a href="#" id="startEiken3">英検3級</a>
+          <span>・</span>
+          <a href="#" id="startPre2">英検準2級</a>
+        </div>
       </div>
 
-      <h2 class="sectionTitle">カテゴリ</h2>
-      <div id="categoryList" class="categoryList"></div>
+      <ul class="howto">
+        <li>選択肢を押すと、その問題は確定します（選び直し不可）。</li>
+        <li>「次へ」は回答後に進めます。</li>
+        <li>苦手な問題ほど出やすくなります（この端末内で学習します）。</li>
+      </ul>
 
-      <div id="topMessage" class="topMessage" aria-live="polite"></div>
+      <!-- SEO保険：静的リンクは“ここだけ”に控えめに（クローラ向け） -->
+      <div class="categoryArea">
+        <h2>英検レベル別ページ</h2>
+        <div class="miniLinks">
+          <a href="/eiken4/">英検4級 練習問題（無料）</a>
+          <span>・</span>
+          <a href="/eiken3/">英検3級 練習問題（無料）</a>
+          <span>・</span>
+          <a href="/eikenpre2/">英検準2級 練習問題（無料）</a>
+        </div>
+      </div>
+
+      <!-- JS描画のカテゴリ（表示は残す。CTAで開始できるので、ここは保険） -->
+      <div class="categoryArea">
+        <h2>カテゴリ（一覧）</h2>
+        <div id="categoryList" class="categoryList"></div>
+        <div id="topMessage" class="topMessage" aria-live="polite"></div>
+      </div>
 
       <footer class="siteFooter">
         <a href="https://shiolab.com/">© SHIOLAB</a>
@@ -83,13 +179,10 @@
     <section class="quiz" id="quiz" hidden>
       <aside class="side">
         <button id="toTopBtn" class="secondary small topBackBtn" type="button">トップへ</button>
-
         <div class="status" id="statusHint"></div>
-
         <div class="jumpBtns">
           <button id="nextWrongBtn" type="button" class="secondary">間違った問題へ</button>
         </div>
-
         <div id="nav" class="nav"></div>
       </aside>
 
@@ -101,8 +194,6 @@
 
         <div id="qText" class="qtext"></div>
         <div id="choices" class="choices"></div>
-
-        <!-- 正誤＋解説（ボトムシート） -->
         <div id="feedback" class="feedback" aria-live="polite"></div>
 
         <div class="bottomBar">
@@ -114,14 +205,10 @@
 
     <!-- RESULT -->
     <section class="panel" id="result" hidden>
-      <div class="resultHead">
-        <h1>結果</h1>
-      </div>
-
+      <div class="resultHead"><h1>結果</h1></div>
       <div id="summary"></div>
       <div class="adBox" id="adResult" aria-label="広告枠"></div>
       <div id="review"></div>
-
       <div class="resultActions">
         <button id="restartBtn" class="primaryBtn" type="button">もう一度</button>
         <button id="toTopBtn2" class="primaryBtn" type="button">トップへ</button>
@@ -129,6 +216,34 @@
     </section>
   </div>
 
-  <script src="./app.js?v=20260121"></script>
+  <script src="./app.js?v=20260123"></script>
+
+  <script>
+    // app.jsのCATEGORIESから該当カテゴリを探して startCategory を呼びたい
+    // ただ、startCategory は app.js のスコープ内にある可能性が高いので、
+    // 「カテゴリボタンを擬似クリック」する方式にする（安全で壊しにくい）
+
+    function clickCategoryByTitle(title){
+      const list = document.getElementById("categoryList");
+      if(!list) return;
+      const btn = [...list.querySelectorAll("button")].find(b => (b.textContent || "").trim() === title);
+      if(btn) btn.click();
+    }
+
+    document.getElementById("startEiken4")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      clickCategoryByTitle("英検4級");
+    });
+
+    document.getElementById("startEiken3")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      clickCategoryByTitle("英検3級");
+    });
+
+    document.getElementById("startPre2")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      clickCategoryByTitle("英検準2級");
+    });
+  </script>
 </body>
 </html>
