@@ -7,9 +7,10 @@ const PUBLISHED_BASE =
 const MAX_QUESTIONS = 25;
 
 const CATEGORIES = [
-  { key: "rails", title: "Rails", gid: "1983224616", enabled: false },
+  { key: "eiken4", title: "英検4級", gid: "1582643347", enabled: true },
   { key: "eiken3", title: "英検3級", gid: "174274981", enabled: true },
   { key: "eiken2-", title: "英検準2級", gid: "1090561184", enabled: true },
+  { key: "rails", title: "Rails", gid: "1983224616", enabled: false },
 ];
 // ===================
 
