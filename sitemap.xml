@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップ -->
   <url>
     <loc>https://quiz.shiolab.co.jp/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
+  <!-- 英検4級 -->
+  <url>
+    <loc>https://quiz.shiolab.co.jp/eiken4/</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 英検3級 -->
+  <url>
+    <loc>https://quiz.shiolab.co.jp/eiken3/</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 利用規約 -->
+  <url>
+    <loc>https://quiz.shiolab.co.jp/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- プライバシーポリシー -->
+  <url>
+    <loc>https://quiz.shiolab.co.jp/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- 免責事項 -->
+  <url>
+    <loc>https://quiz.shiolab.co.jp/disclaimer.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
