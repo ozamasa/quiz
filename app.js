@@ -54,7 +54,7 @@ function showScreen(which) {
   topEl.hidden = which !== "top";
   quizEl.hidden = which !== "quiz";
   resultEl.hidden = which !== "result";
-  appHeaderEl.hidden = (which === "top");
+  if (appHeaderEl) appHeaderEl.hidden = (which === "top");
 }
 
 // Utils
@@ -121,7 +121,7 @@ function parseQuestionsTSV(text) {
     const ans = normalizeAnswer(cols[idx.answer]);
     if (![1, 2, 3, 4].includes(ans)) {
       throw new Error(
-        `answer は 1〜4（行: ${lineNo + 2} / raw=${JSON.stringify(cols[idx.answer])})`
+        `answer は 1〜4（行: ${lineNo + 2} / raw=${JSON.stringify(cols[idx.answer])}）`
       );
     }
 
@@ -266,7 +266,9 @@ function updateStatus() {
 
   statusHintEl.textContent = `正解:${correct} | 未回答:${unanswered} | 不正解:${wrong}`;
 
-  if (nextWrongBtn) nextWrongBtn.disabled = (wrong === 0);
+  if (nextWrongBtn) {
+    nextWrongBtn.disabled = (wrong === 0);
+  }
 }
 
 function setFeedbackForCurrent() {
@@ -357,7 +359,6 @@ function render() {
     choicesEl.appendChild(btn);
   });
 
-  // 回答後はchoicesを“下”に見せる
   choicesEl.classList.toggle("is-dim", answered);
 
   updateNavState();
@@ -486,6 +487,20 @@ function renderTop() {
   });
 }
 
+function autoStartFromQuery() {
+  const params = new URLSearchParams(location.search);
+  const key = params.get("category");
+  if (!key) return;
+
+  const cat = CATEGORIES.find((c) => c.enabled && c.key === key);
+  if (!cat) return;
+
+  // URL をきれいに（/ ?category=... を残したくない場合は置換）
+  // history.replaceState(null, "", "/");
+
+  startCategory(cat);
+}
+
 // Events
 toTopBtn.addEventListener("click", () => backToTop(true));
 toTopBtn2.addEventListener("click", () => backToTop(false));
@@ -522,3 +537,4 @@ restartBtn.addEventListener("click", () => {
 showScreen("top");
 renderTop();
 updateStatus();
+autoStartFromQuery();
